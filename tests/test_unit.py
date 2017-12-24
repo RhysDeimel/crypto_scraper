@@ -66,7 +66,7 @@ def test_get_value_returns_multiple_correct_price():
     assert assets.get_value(given, assets.price) == expected
 
 
-def test_get_value_returns_none_when_no_price():
+def test_get_value_returns_str_when_no_price():
     given = {"feathercoin": 1.40910082}
     expected = {"feathercoin": "No price data"}
     assets = cs.Crypto_Assets()
@@ -74,7 +74,7 @@ def test_get_value_returns_none_when_no_price():
     assert assets.get_value(given, assets.price) == expected
 
 
-def test_get_value_returns_none_when_for_no_price_when_mixed():
+def test_get_value_returns_str_for_no_price_when_mixed():
     given = {"bitcoin": 0.00107096,
              "feathercoin": 1.40910082}
     expected = {"bitcoin": 24.29,
