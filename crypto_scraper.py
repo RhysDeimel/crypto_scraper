@@ -23,7 +23,8 @@ import json
 # API calls
 #############
 
-#TODO: actually put something here
+# TODO: Change mocks below to actual calls that work with testing
+#   - make a secrets file to store API keys
 
 
 #############
@@ -34,8 +35,15 @@ class Crypto_Assets():
     """Stores a tally of all obtained crypto and value"""
 
     def __init__(self):
-        self.coins = {item['coin']: item['confirmed'] for item in self.get_raw_miningpoolhub_data()['getuserallbalances']['data']}
-        self.price = {item['id']: float(item['price_aud']) for item in self.get_raw_coinmarketcap_data() if item['id'] in self.coins.keys()}
+        self.coins = {
+            item['coin']: item['confirmed'] for item in
+            self.get_raw_miningpoolhub_data()['getuserallbalances']['data']
+        }
+        self.price = {
+            item['id']: float(item['price_aud']) for item in
+            self.get_raw_coinmarketcap_data()
+            if item['id'] in self.coins.keys()
+        }
 
     def get_raw_miningpoolhub_data(self):
         """Stub that reads in static file. Replace with API call"""
@@ -43,6 +51,7 @@ class Crypto_Assets():
         return json.load(stub)
 
     def get_raw_coinmarketcap_data(self):
+        """Stub that reads in static file. Replace with API call"""
         stub = open('tests/coinmarketcap_stub.json')
         return json.load(stub)
 
@@ -50,7 +59,7 @@ class Crypto_Assets():
         """Given a dictionary of coins, will return the AUD value of held coins"""
         coins = coin_dict.copy()
 
-        for k,v in coin_dict.items():
+        for k, v in coin_dict.items():
             coin_price = price_dict.get(k, None)
             if not coin_price:
                 coins[k] = 'No price data'
@@ -61,5 +70,15 @@ class Crypto_Assets():
 
     def tally_crypto(self, coin_value_dict):
         """Returns the total price in AUD of all coins held"""
+
+        # Making sure that we catch the super unlikely chance an int gets passed
+        assert not [v for v in coin_value_dict.values() if type(v) == int]
+
         coin_values = [v for v in coin_value_dict.values() if type(v) == float]
         return sum(coin_values)
+
+
+# TODO: store instance of object for later use
+#   - comparing how much crypto earnt since last run
+#   - comparing value of earnt crypto since last run
+#   - add timestamp for future data analysis?
