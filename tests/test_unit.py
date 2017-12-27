@@ -16,7 +16,7 @@ def test_dict_of_coins_and_values_is_extracted_from_miningpoolhub():
                 "zencash": 0.00088039,
                 "bitcoin-gold": 0.00197191}
 
-    assets = cs.Crypto_Assets()
+    assets = cs.Crypto_Assets(testing=True)
     assert assets.coins == expected
 
 
@@ -31,14 +31,14 @@ def test_prices_extracted_from_coinmarketcap_when_held():
                 "zencash": 43.3666257024,
                 "bitcoin-gold": 387.915625383}
 
-    assets = cs.Crypto_Assets()
+    assets = cs.Crypto_Assets(testing=True)
     assert assets.price == expected
 
 
 def test_get_value_returns_single_correct_price():
     given = {"bitcoin": 0.00107096}
     expected = {"bitcoin": 24.29}
-    assets = cs.Crypto_Assets()
+    assets = cs.Crypto_Assets(testing=True)
 
     assert assets.get_value(given, assets.price) == expected
 
@@ -61,7 +61,7 @@ def test_get_value_returns_multiple_correct_price():
                 "monacoin": 15.57,
                 "zencash": 0.04,
                 "bitcoin-gold": 0.76}
-    assets = cs.Crypto_Assets()
+    assets = cs.Crypto_Assets(testing=True)
 
     assert assets.get_value(given, assets.price) == expected
 
@@ -69,7 +69,7 @@ def test_get_value_returns_multiple_correct_price():
 def test_get_value_returns_str_when_no_price():
     given = {"feathercoin": 1.40910082}
     expected = {"feathercoin": "No price data"}
-    assets = cs.Crypto_Assets()
+    assets = cs.Crypto_Assets(testing=True)
 
     assert assets.get_value(given, assets.price) == expected
 
@@ -79,7 +79,7 @@ def test_get_value_returns_str_for_no_price_when_mixed():
              "feathercoin": 1.40910082}
     expected = {"bitcoin": 24.29,
                 "feathercoin": "No price data"}
-    assets = cs.Crypto_Assets()
+    assets = cs.Crypto_Assets(testing=True)
 
     assert assets.get_value(given, assets.price) == expected
 
@@ -94,7 +94,7 @@ def test_tally_crypto_sums_held_crypto():
              "zencash": 0.04,
              "bitcoin-gold": 0.76}
 
-    assets = cs.Crypto_Assets()
+    assets = cs.Crypto_Assets(testing=True)
 
     assert assets.tally_crypto(given) == 56.62
 
@@ -111,6 +111,6 @@ def test_tally_crypto_ingnores_no_data_values():
              "zencash": 0.04,
              "bitcoin-gold": 0.76}
 
-    assets = cs.Crypto_Assets()
+    assets = cs.Crypto_Assets(testing=True)
 
     assert assets.tally_crypto(given) == 56.62
