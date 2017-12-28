@@ -20,7 +20,7 @@
             "exchange":0
          },
          {
-            "coin":"feathercoin",
+            "coin":"notarealcoin",
             "confirmed":1.40910082,
             "unconfirmed":0,
             "ae_confirmed":0,
@@ -44,7 +44,7 @@
             "exchange":0
          },
          {
-            "coin":"zclassic",
+            "coin":"anothertestcoin",
             "confirmed":0.02357081,
             "unconfirmed":0,
             "ae_confirmed":0,
