@@ -8,3 +8,5 @@ Install requirements with pip and create a `secrets.py` file in root folder with
 ```
 api_key = 'YourKeyHere'
 ```
+
+Where `api_key` is the API key from miningpoolhub
