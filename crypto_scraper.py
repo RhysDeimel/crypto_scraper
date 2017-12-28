@@ -58,7 +58,7 @@ class Crypto_Assets():
             stub = open('tests/coinmarketcap_stub.json')
             return json.load(stub)
         else:
-            r = requests.get('https://api.coinmarketcap.com/v1/ticker/?convert=AUD')
+            r = requests.get('https://api.coinmarketcap.com/v1/ticker/?convert=AUD&limit=0')
             r.raise_for_status()
             return json.loads(r.text)
 
