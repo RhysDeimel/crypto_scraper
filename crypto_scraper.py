@@ -1,29 +1,17 @@
 # Short scraper to pull what crypto I have on miningpoolhub and get prices from
 # coinmarketcap.com
 
-# Would like to:
-#   - get all cryto I have
-#     - leave it open to check wallets or other pools in the future
-#   - get absolute value of all crypto (confirmed values only)
+# TODO
+#   - store instance of object for later use
 #   - get crypto since last run (confirmed values only)
 #   - get crypto value since last run
-#   - display in AUD
 
-
-# call to coinmarketcap:
-# https://api.coinmarketcap.com/v1/ticker/?convert=AUD
-#
-# is probs quicker to get all values, and isolate the ones needed, rather than
-# make serparate API calls for each coin
 
 import requests
 import json
 import time
 import pprint
 import secrets
-
-# TODO: Change mocks below to actual calls that work with testing
-#   - make a secrets file to store API keys
 
 
 class Crypto_Assets():
@@ -83,10 +71,6 @@ class Crypto_Assets():
 
         coin_values = [v for v in coin_value_dict.values() if type(v) == float]
         return sum(coin_values)
-
-# TODO: store instance of object for later use
-#   - comparing how much crypto earnt since last run
-#   - comparing value of earnt crypto since last run
 
 
 if __name__ == "__main__":
