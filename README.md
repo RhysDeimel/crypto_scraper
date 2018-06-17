@@ -1,6 +1,6 @@
 # CryptoScraper
 
-Short script to pull mined coins of miningpoolhub and then fetch their associated value from coinmarketcap.
+Short script to pull mined coins off miningpoolhub and then fetch their associated value from coinmarketcap.
 
 ## Setup
 

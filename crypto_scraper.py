@@ -3,6 +3,8 @@
 
 # TODO
 #   - store instance of object for later use
+#       - in SQLite, schema as ... ?
+#           - self.time, self.coins, self.price 
 #   - get crypto since last run (confirmed values only)
 #   - get crypto value since last run
 
