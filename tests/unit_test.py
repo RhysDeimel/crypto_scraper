@@ -14,3 +14,6 @@ class TestMiningPoolHub:
         second = pool.MiningPoolHub()
 
         assert first.date != second.date
+
+    def test_fetch_raw_data_returns_json_coin_blob(self):
+        assert False

@@ -8,14 +8,19 @@ class Pool:
 
 
 class MiningPoolHub(Pool):
+    # URL = ("https://miningpoolhub.com/index.php",
+    #        "?page=api&action=getuserallbalances",
+    #        "&api_key={}")
 
     def __init__(self):
         super().__init__()
         self.name = "MiningPoolHub"
+        self.base_url = "https://miningpoolhub.com/index.php"
 
-    def get_all_coins():
-        """Returns a dictionary of coin names and amounts in pool"""
+    def fetch_raw_data():
+        """Calls the api and returns a json blob of coins + amounts"""
         pass
+
 
 
 
