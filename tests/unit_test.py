@@ -1,5 +1,5 @@
 import time
-from crypto_scraper import pool
+from crypto_scraper import coinpool
 
 
 class TestPool:
@@ -9,11 +9,10 @@ class TestPool:
 class TestMiningPoolHub:
 
     def test_two_instances_have_different_date_values(self):
-        first = pool.MiningPoolHub()
+        first = coinpool.MiningPoolHub()
         time.sleep(1)
-        second = pool.MiningPoolHub()
+        second = coinpool.MiningPoolHub()
 
         assert first.date != second.date
 
-    def test_fetch_raw_data_returns_json_coin_blob(self):
-        assert False
+
