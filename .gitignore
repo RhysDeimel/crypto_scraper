@@ -2,3 +2,5 @@ venv/
 .cache/
 __pycache__/
 secrets.py
+.idea/
+.pytest_cache/
