@@ -1,0 +1,14 @@
+[
+    {
+        "coin":"bitcoin",
+        "confirmed":0.00107096
+    },
+    {
+        "coin":"vertcoin",
+        "confirmed":0.50628363
+    },
+    {
+        "coin":"notarealcoin",
+        "confirmed":1.40910082
+    }
+]
