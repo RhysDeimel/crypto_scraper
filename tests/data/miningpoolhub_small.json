@@ -1,0 +1,32 @@
+{
+   "getuserallbalances":{
+      "version":"1.0.0",
+      "runtime":3.6261081695557,
+      "data":[
+         {
+            "coin":"bitcoin",
+            "confirmed":0.00107096,
+            "unconfirmed":0,
+            "ae_confirmed":0,
+            "ae_unconfirmed":0,
+            "exchange":0
+         },
+         {
+            "coin":"vertcoin",
+            "confirmed":0.50628363,
+            "unconfirmed":0.00849418,
+            "ae_confirmed":0,
+            "ae_unconfirmed":0,
+            "exchange":0
+         },
+         {
+            "coin":"notarealcoin",
+            "confirmed":1.40910082,
+            "unconfirmed":0,
+            "ae_confirmed":0,
+            "ae_unconfirmed":0,
+            "exchange":0
+         }
+      ]
+   }
+}
