@@ -2,7 +2,6 @@ import pytest
 import time
 import json
 from crypto_scraper import coinpool
-import os
 
 
 class TestPool:
@@ -40,13 +39,3 @@ def data_loader():
             return json.load(f)
 
     return open_file
-
-# @pytest.fixture
-# def coin_list():
-#     with open("tests/data/coin_list.json", 'r') as f:
-#         return json.load(f)
-#
-# @pytest.fixture
-# def confirmed_coin_list():
-#     with open("tests/data/confirmed_coin_list.json", 'r') as f:
-#         return json.load(f)
