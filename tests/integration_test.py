@@ -11,3 +11,7 @@ class TestMiningPoolHub:
         pool = coinpool.MiningPoolHub()
         api_version = pool.fetch_raw_data()['getuserallbalances']['version']
         assert api_version == "1.0.0"
+
+
+class TestCoinMarketCap:
+    pass

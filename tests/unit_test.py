@@ -2,6 +2,7 @@ import pytest
 import time
 import json
 from crypto_scraper import coinpool
+from crypto_scraper import tracker
 
 
 class TestPool:
@@ -30,6 +31,21 @@ class TestMiningPoolHub:
         confirmed = snapshot.confirmed_coins(given)
 
         assert confirmed == expected
+
+
+class TestTracker:
+    pass
+
+
+class TestCoinMarketCap:
+
+    def test_two_instances_have_different_date_values(self):
+        first = tracker.CoinMarketCap()
+        time.sleep(1)
+        second = tracker.CoinMarketCap()
+
+        assert first.date != second.date
+
 
 @pytest.fixture
 def data_loader():
